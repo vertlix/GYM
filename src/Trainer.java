@@ -1,31 +1,18 @@
-public class Trainer {
-    private int trainerId;
-    private String name;
+public class Trainer extends Person {
+
     private String specialization;
     private double hourlyRate;
 
     public Trainer(int trainerId, String name, String specialization, double hourlyRate) {
-        this.trainerId = trainerId;
-        this.name = name;
-        this.specialization = specialization;
-        this.hourlyRate = hourlyRate;
+        super(trainerId, name, "N/A");
+        setSpecialization(specialization);
+        setHourlyRate(hourlyRate);
     }
-
 
     public Trainer() {
-        this.trainerId = 0;
-        this.name = "Unknown Trainer";
+        super();
         this.specialization = "General";
         this.hourlyRate = 0.0;
-    }
-
-
-    public int getTrainerId() {
-        return trainerId;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getSpecialization() {
@@ -36,22 +23,19 @@ public class Trainer {
         return hourlyRate;
     }
 
-    public void setTrainerId(int trainerId) {
-        this.trainerId = trainerId;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setSpecialization(String specialization) {
-        this.specialization = specialization;
+        if (specialization != null && !specialization.isEmpty()) {
+            this.specialization = specialization;
+        }
     }
 
     public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
+        if (hourlyRate >= 0) {
+            this.hourlyRate = hourlyRate;
+        }
     }
 
+    // OLD LOGIC SAVED
     public boolean isPremiumTrainer() {
         return hourlyRate > 8000;
     }
@@ -60,10 +44,14 @@ public class Trainer {
         return hourlyRate * hours;
     }
 
+    @Override
+    public void work() {
+        System.out.println(name + " is coaching clients");
+    }
 
     @Override
     public String toString() {
-        return "Trainer{trainerId=" + trainerId +
+        return "Trainer{trainerId=" + id +
                 ", name='" + name + '\'' +
                 ", specialization='" + specialization + '\'' +
                 ", hourlyRate=" + hourlyRate + '}';

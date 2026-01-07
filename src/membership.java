@@ -1,4 +1,5 @@
 public class membership {
+
     private int membershipId;
     private String memberName;
     private double price;
@@ -34,22 +35,6 @@ public class membership {
         return status;
     }
 
-    public void setMembershipId(int membershipId) {
-        this.membershipId = membershipId;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public void activateMembership() {
         status = "Active";
     }
@@ -59,9 +44,10 @@ public class membership {
     }
 
     public void addPayment(double amount) {
-        price += amount;
+        if (amount > 0) {
+            price += amount;
+        }
     }
-
 
     @Override
     public String toString() {
