@@ -41,7 +41,7 @@ public class Main {
                 }
                 case 4 -> {
                     for (Person p : people) {
-                        p.work(); // polymorphic call
+                        p.work();
                         if (p instanceof Member m) {
                             System.out.println("Active member: " + m.isActiveMember());
                         } else if (p instanceof Trainer t) {
