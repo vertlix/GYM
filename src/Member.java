@@ -34,7 +34,7 @@ public class Member extends Person {
 
     @Override
     public void work() {
-        System.out.println(name + " is training in the gym");
+        System.out.println(name);
     }
 
     @Override
