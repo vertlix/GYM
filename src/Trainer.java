@@ -46,7 +46,7 @@ public class Trainer extends Person {
 
     @Override
     public void work() {
-        System.out.println(name + " is coaching clients");
+        System.out.println(name );
     }
 
     @Override
