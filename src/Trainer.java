@@ -35,7 +35,7 @@ public class Trainer extends Person {
         }
     }
 
-    // OLD LOGIC SAVED
+
     public boolean isPremiumTrainer() {
         return hourlyRate > 8000;
     }
