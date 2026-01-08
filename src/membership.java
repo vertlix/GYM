@@ -11,7 +11,6 @@ public class membership {
         this.price = price;
         this.status = status;
     }
-
     public membership() {
         this.membershipId = 0;
         this.memberName = "Unknown";
