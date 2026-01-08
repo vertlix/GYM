@@ -22,7 +22,7 @@ public class Member extends Person {
         }
     }
 
-    // OLD LOGIC SAVED
+
     public void addVisit() {
         visitCount++;
     }
