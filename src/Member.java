@@ -1,5 +1,4 @@
 public class Member extends Person {
-
     private int visitCount;
 
     public Member(int memberId, String name, String phoneNumber, int visitCount) {
@@ -12,36 +11,30 @@ public class Member extends Person {
         this.visitCount = 0;
     }
 
-    public int getVisitCount() {
-        return visitCount;
-    }
+    public int getVisitCount() { return visitCount; }
 
     public void setVisitCount(int visitCount) {
-        if (visitCount >= 0) {
-            this.visitCount = visitCount;
-        }
+        if (visitCount >= 0) this.visitCount = visitCount;
     }
 
+    public void addVisit() { visitCount++; }
 
-    public void addVisit() {
-        visitCount++;
-    }
-
-    public boolean isActiveMember() {
-        return visitCount >= 10;
-    }
-
+    public boolean isActiveMember() { return visitCount >= 10; }
 
     @Override
     public void work() {
-        System.out.println(name);
+        System.out.println(name + " is working out.");
     }
 
     @Override
     public String toString() {
-        return "Member{memberId=" + id +
-                ", name='" + name + '\'' +
-                ", phone='" + phoneNumber + '\'' +
-                ", visitCount=" + visitCount + '}';
+        return "Member{memberId=" + id + ", name='" + name + '\'' +
+                ", phone='" + phoneNumber + '\'' + ", visitCount=" + visitCount + '}';
+    }
+
+    @Override
+    public void greet() {
+        super.greet();
+        System.out.println("Hello" + name);
     }
 }
