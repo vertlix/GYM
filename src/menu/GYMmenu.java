@@ -1,4 +1,4 @@
-package meni;
+package menu;
 import model.*;
 import exception.InvalidInputException;
 import java.util.ArrayList;
@@ -12,9 +12,9 @@ public class GYMmenu implements Menu {
         programs=new ArrayList<>();
         scanner=new Scanner(System.in);
         people.add(new member(1001, "Aruzhan", 30));
-        people.add(new member(110, "Alikhan", 1));
+        people.add(new member(110, "Alikhan", 12));
         programs.add(new trainingprogram("Weight gain", 100, "Advanced"));
-        programs.add(new trainingprogram("Woman's yoga", 5, "Beginner"));
+        programs.add(new trainingprogram("Woman's yoga", 90, "Beginner"));
 
     }
 @Override
@@ -54,6 +54,21 @@ public class GYMmenu implements Menu {
         }
         scanner.close();
     }
+
+    private void addTrainer() {
+        System.out.print("ID: ");
+        int id = scanner.nextInt(); scanner.nextLine();
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Specialization: ");
+        String spec = scanner.nextLine();
+        System.out.print("Rate: ");
+        double rate = scanner.nextDouble();
+
+        people.add(new trainer(id, name, spec, rate));
+        System.out.println("Trainer added");
+    }
+
     private void addMember(){
         System.out.println("ID:");
         int ID=scanner.nextInt();
@@ -79,7 +94,7 @@ public class GYMmenu implements Menu {
             if(p instanceof member m){
                 System.out.println("Active members: "+m.isActiveMember());
             }
-            else if(o instanceof trainer t){
+            else if(p instanceof trainer t){
                 System.out.println("Premium trrainerrr: "+t.isPremiumTrainer());
             }
             System.out.println();

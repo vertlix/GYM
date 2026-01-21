@@ -14,22 +14,22 @@ public class trainingprogram implements trainable {
         return name;
     }
     public void setName(String name){
-        if(this.name ==null|| this.name.trim().isEmpty()){
+        if(name==null|| name.trim().isEmpty()){
             throw new IllegalArgumentException("program name cannot be this value");
         }
-        this.name= this.name;
+        this.name= name;
     }
     public void setDuration(int duration) {
-        if (this.duration <= 0) {
+        if (duration <= 0) {
             throw new IllegalArgumentException("duration cannot be negative");
         }
-        this.duration = this.duration;
+        this.duration = duration;
     }
     public void setLvl(String lvl){
-        if(this.lvl ==null|| this.lvl.trim().isEmpty()){
+        if(lvl==null|| lvl.trim().isEmpty()){
             throw new IllegalArgumentException("level cannot be empty");
         }
-        this.lvl= this.lvl;
+        this.lvl= lvl;
     }
     @Override
     public void startTraining(){

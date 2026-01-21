@@ -1,4 +1,3 @@
-package model;
 import menu.Menu;
 import menu.GYMmenu;
 public class Main {

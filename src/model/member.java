@@ -10,9 +10,12 @@ public class member extends person {
     }
     public void setVisitcount(int Visitcount){
         if(Visitcount<0){
-            throw new IllegalArgumentException("VISITCOUNT CANNOT BE NEGATIVE");
+            throw new IllegalArgumentException("VISIT COUNT CANNOT BE NEGATIVE");
         }
         this.Visitcount=Visitcount;
+    }
+    public boolean isActiveMember() {
+        return Visitcount >= 10;
     }
     public boolean IsActiveMember(){
         return Visitcount>=20;

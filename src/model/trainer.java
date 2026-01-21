@@ -25,7 +25,7 @@ public class trainer extends person {
         }
         this.hourRate=hourRate;
     }
-    public boolean IsPremiumTrainer(){
+    public boolean isPremiumTrainer(){
         return hourRate>=1000;
     }
 

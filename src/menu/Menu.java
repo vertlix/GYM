@@ -1,5 +1,5 @@
-package meni;
-public class Menu {
+package menu;
+public interface Menu {
     void displayMenu();
     void run();
 }
