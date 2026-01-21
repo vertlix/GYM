@@ -68,7 +68,6 @@ public class GYMmenu implements Menu {
         people.add(new trainer(id, name, spec, rate));
         System.out.println("Trainer added");
     }
-
     private void addMember(){
         System.out.println("ID:");
         int ID=scanner.nextInt();
@@ -79,7 +78,6 @@ public class GYMmenu implements Menu {
         int visits = scanner.nextInt();
         people.add(new member(ID, name, visits));
         System.out.println("Member added");
-
     }
     private void viewAll(){
         for(person p:people){
