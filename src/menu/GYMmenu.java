@@ -75,12 +75,10 @@ public class GYMmenu implements Menu {
         scanner.nextLine();
         System.out.println("name:");
         String name=scanner.nextLine();
-        System.out.println("Specialization:");
-        String spec=scanner.nextLine();
-        System.out.println("Rate:");
-        double rate=scanner.nextDouble();
-        people.add(new trainer(ID,name,spec,rate));
-        System.out.println("Trrainer added");
+        System.out.print("Visits: ");
+        int visits = scanner.nextInt();
+        people.add(new member(ID, name, visits));
+        System.out.println("Member added");
 
     }
     private void viewAll(){
