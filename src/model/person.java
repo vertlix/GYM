@@ -1,3 +1,4 @@
+
 package model;
 public abstract class person {
     protected int ID;

@@ -1,3 +1,4 @@
+
 package model;
 public class member extends person {
     private int Visitcount;

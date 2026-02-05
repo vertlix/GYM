@@ -1,3 +1,4 @@
+
 package model;
 public class trainingprogram implements trainable {
     private String name;
