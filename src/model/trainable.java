@@ -1,4 +1,3 @@
-
 package model;
 public interface trainable {
     void startTraining();

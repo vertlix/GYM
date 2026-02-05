@@ -75,7 +75,6 @@ public class GYMmenu implements Menu {
         scanner.close();
     }
 
-    // ================= MEMBER METHODS =================
 
     private void addMember() {
         System.out.print("ID: ");
@@ -83,16 +82,13 @@ public class GYMmenu implements Menu {
         scanner.nextLine();
         System.out.print("Name: ");
         String name = scanner.nextLine();
-
         System.out.print("Visit count: ");
         int visits = scanner.nextInt();
         scanner.nextLine();
-
-
         member m = new member(id, name, visits);
         memberDAO.insert(m);
 
-        System.out.println("Member added to database!");
+        System.out.println("Member added to database");
     }
 
     private void viewAllMembers() {
@@ -102,38 +98,36 @@ public class GYMmenu implements Menu {
             System.out.println(m);
         }
     }
-
     private void searchMemberByName() {
-        System.out.print("Enter name to search: ");
+        System.out.print("Enter name to search ");
         String name = scanner.nextLine();
 
         List<member> result = memberDAO.searchByName(name);
-        System.out.println("\n--- SEARCH RESULTS ---");
+        System.out.println("\nSEARCH RESULTS");
         for (member m : result) {
             System.out.println(m);
         }
     }
-
     private void searchMemberByVisits() {
         System.out.print("Minimum visits: ");
         int visits = scanner.nextInt();
         scanner.nextLine();
 
         List<member> result = memberDAO.searchByVisits(visits);
-        System.out.println("\n--- SEARCH RESULTS ---");
+        System.out.println("\nSEARCH RESULTS");
         for (member m : result) {
             System.out.println(m);
         }
     }
 
     private void updateMember() {
-        System.out.print("Enter member ID to update: ");
+        System.out.print("Enter member ID to update ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
         member m = memberDAO.getById(id);
         if (m == null) {
-            System.out.println("Member not found!");
+            System.out.println("Member not found");
             return;
         }
 
@@ -146,31 +140,26 @@ public class GYMmenu implements Menu {
         if (!visitsStr.isEmpty()) m.setVisitcount(Integer.parseInt(visitsStr));
 
         memberDAO.update(m);
-        System.out.println("Member updated!");
+        System.out.println("Member updated");
     }
 
     private void deleteMember() {
-        System.out.print("Enter member ID to delete: ");
+        System.out.print("Enter member ID to delete ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
         member m = memberDAO.getById(id);
         if (m == null) {
-            System.out.println("Member not found!");
+            System.out.println("no memmver");
             return;
         }
 
-        System.out.print("Are you sure you want to delete " + m.getName() + "? (y/n): ");
-        String confirm = scanner.nextLine();
-        if (confirm.equalsIgnoreCase("y")) {
-            memberDAO.delete(id);
-            System.out.println("Member deleted!");
-        } else {
-            System.out.println("Deletion cancelled.");
-        }
+        memberDAO.delete(id);
+        System.out.println("Member deleted");
+
     }
 
-    // ================= TRAINER METHODS =================
+
     private void addTrainer() {
         System.out.print("ID: ");
         int id = scanner.nextInt();
@@ -183,11 +172,10 @@ public class GYMmenu implements Menu {
         double rate = scanner.nextDouble();
         scanner.nextLine();
 
-        // Пока тренеры в памяти
-        System.out.println("Trainer added (memory only)!");
+        trainer t = new trainer(id, name, spec, rate);
+        System.out.println("Trainer added");
     }
 
-    // ================= TRAINING PROGRAM METHODS =================
     private void viewPrograms() {
         for (int i = 0; i < programs.size(); i++) {
             System.out.println((i + 1) + ". " + programs.get(i));
